@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-BR">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-8 `}
+        className={`${geistSans.variable} ${geistMono.variable} `}
       >
         <SideBar/>
         <TableClinica />

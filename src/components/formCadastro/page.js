@@ -58,7 +58,7 @@ export default function Formulario(){
     }
     return(
         <div className="max-w-2xl mx-auto mt-5">
-            <Card>
+            <Card className="">
                 <CardHeader className="">
                         <CardTitle className="flex items-center space-x-2 ">
                             <CalendarIcon className="h-5 w-5 text-blue-600"/>
@@ -73,9 +73,9 @@ export default function Formulario(){
                             <h3>Dados do Paciente </h3>
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
-                                <Label htmlFor="nomePaciente"> Nome Completo *</Label>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="">
+                                <Label htmlFor="nomePaciente" > Nome Completo *</Label>
                                 <Input
                                 id="nomePaciente"
                                 value={formData.nomePaciente}
@@ -85,8 +85,7 @@ export default function Formulario(){
                                 />
                             </div>
 
-                            
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="nomePaciente"> Telefone</Label>
                                 <Input
                                 id="nomePaciente"
@@ -97,7 +96,7 @@ export default function Formulario(){
                                 />
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="nomePaciente"> E-mail</Label>
                                 <Input
                                 id="nomePaciente"
@@ -115,7 +114,7 @@ export default function Formulario(){
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="doctor">Médico *</Label>
                                 <Select 
                                 value={formData.medico} 
@@ -130,7 +129,7 @@ export default function Formulario(){
                                     <SelectTrigger className="">
                                         <SelectValue placeholder="Selecione o médico" />
                                     </SelectTrigger>
-                                    <SelectContent>
+                                    <SelectContent position="popper" side="bottom" align="start" className="z-50">
                                         {doutores.map((medico) => (
                                             <SelectItem 
                                             key={medico.id} 
@@ -143,7 +142,7 @@ export default function Formulario(){
                                 </Select>
                             </div>
                             
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="nomePaciente"> Especialidade</Label>
                                 <Input
                                 id="especialidade"
@@ -155,8 +154,8 @@ export default function Formulario(){
                             </div>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div className="space-y-2">
-                                    <Label htmlFor="date">Data *</Label>
+                                <div className="">
+                                    <Label htmlFor="date" >Data *</Label>
                                     <Input
                                         id="date"
                                         type="date"
@@ -168,13 +167,13 @@ export default function Formulario(){
                                 </div>
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="time">Horário *</Label>
                                     <Select value={formData.time} onValueChange={(value) => setFormData({ ...formData, hora: value })}>
                                         <SelectTrigger>
                                             <SelectValue placeholder="Selecione o horário" />
                                         </SelectTrigger>
-                                        <SelectContent>
+                                        <SelectContent position="popper" side="bottom" align="start" className="z-50">
                                         {horarios.map((time) => (
                                             <SelectItem key={time} value={time}>
                                             {time}
@@ -184,7 +183,7 @@ export default function Formulario(){
                                     </Select>
                             </div>
 
-                            <div className="space-y-2">
+                            <div className="">
                                 <Label htmlFor="notes">Observações</Label>
                                 <Textarea
                                     id="notes"
